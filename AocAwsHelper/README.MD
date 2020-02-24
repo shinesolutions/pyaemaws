@@ -14,12 +14,17 @@ Check setup.py for package configuration and dependencies.
 
 `eg: pip3 install dist/AocAwsHelper-0.0.2-py3-none-any.whl`
 
-from StackPrefixHelper import StackPrefixHelper
 
->>> s = StackPrefixHelper.StackPrefixHelper(stack_type="consolidated")
->>> print(s.fetch_stack_details())
+**Usage**
+```from StackPrefixHelper import StackPrefixHelper
+
+s = StackPrefixHelper.StackPrefixHelper(stack_type="consolidated")
+print(s.fetch_stack_details())
 aoc-con62-npe-pdev-01 aoc-con62-npe-dev1-19 aoc-con62-npe-dev5-04 aoc-con62-npe-dev3-03 aoc-con62-npe-dev2-18
->>> s = StackPrefixHelper.StackPrefixHelper(stack_type="stack-manager")
->>> print(s.fetch_stack_details())
-aoc-sm-npe-18
- More details and usage to be added.
+
+s = StackPrefixHelper.StackPrefixHelper(stack_type="stack-manager")
+print(s.fetch_stack_details())
+ aoc-sm-npe-18
+```
+
+More details and usage to be added.
