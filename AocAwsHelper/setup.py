@@ -1,0 +1,26 @@
+import setuptools
+
+with open("/opt/repos/auspost/aem-opencloud-libraries/AocAwsHelper/README.MD", "r") as fh:
+    long_description = fh.read()
+
+setuptools.setup(
+    name="AocAwsHelper",
+    version="0.0.4",
+    author="ShineSolutions",
+    author_email="author@example.com",
+    description="AWS Helper Python Package",
+    long_description=long_description,
+    long_description_content_type="text/markdown",
+    url="https://github.com/shinesolutions/pyaemaws",
+    packages=setuptools.find_packages(),
+    classifiers=[
+        "Programming Language :: Python :: 3",
+        "License :: OSI Approved :: MIT License",
+        "Operating System :: OS Independent",
+    ],
+    python_requires='>=3.6',
+    install_requires=[
+        "boto3==1.9.71",
+        "python-dateutil==2.8.0"
+    ]
+)
