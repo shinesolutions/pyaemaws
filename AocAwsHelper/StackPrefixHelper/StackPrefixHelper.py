@@ -26,8 +26,8 @@ class StackPrefixHelper:
         self.stack_list = {}
         self.stack_type_values = ["full-set", "consolidated", "stack-manager"]
         self.return_as_values = ["text", "list", "json"]
-        self.validate_inputs(self.stack_type, "stack_type")
-        self.validate_inputs(self.return_as, "return_as")
+        # self.validate_inputs(self.stack_type, "stack_type")
+        # self.validate_inputs(self.return_as, "return_as")
         # return self.fetch_stack_details(self.stack_type_filter_abbrev[self.stack_type])
 
     def datetime_convertor(self, o):
@@ -35,13 +35,13 @@ class StackPrefixHelper:
             return o.__str__()
 
     def validate_inputs(self, input_value, input_type):
-        if input_type == "stack_type" and input_value in self.stack_type_values:
-            return True
+        if input_type == "stack_type" and input_value not in self.stack_type_values:
+            return False
 
-        if input_type == "return_as" and input_value in self.return_as_values:
-            return True
+        if input_type == "return_as" and input_value not in self.return_as_values:
+            return False
 
-        return False
+        return True
 
     def fetch_stack_details(self):
         stack_type_filter = self.stack_type
@@ -72,6 +72,7 @@ class StackPrefixHelper:
         stack_list_keys = self.stack_list.keys()
         if self.return_as == "json":
             sorted_stack_details = sorted(self.stack_details.items())
+            # print sorted_stack_details
             return json.dumps(sorted_stack_details, indent=2, default=self.datetime_convertor)
         if self.return_as == "list":
             return stack_list_keys
@@ -79,3 +80,7 @@ class StackPrefixHelper:
             return " ".join(stack_list_keys)
 
         return " ".join(stack_list_keys)
+
+if __name__ == '__main__':
+    s = StackPrefixHelper(stack_type="full-set", return_as="json")
+    print(s.fetch_stack_details())
