@@ -6,7 +6,10 @@ Check setup.py for package configuration and dependencies.
 
 **How to Build**
 
-`python3 setup.py sdist bdist_wheel`
+```
+pip3 install wheel
+python3 setup.py sdist bdist_wheel
+```
 
 **How to Install**
 
@@ -38,11 +41,14 @@ eg: python -m unittest discover -s tests
 `pip install coverage`
 
 ```
-set pythonpath to pyaemaws
+set pythonpath to pyaemaws, if module cannot be loaded error occurs
 export PYHTONPATH=<path_to_pyaemaws>
 eg: export PYTHONPATH=/opt/repos/shine/pyaemaws
 ```
 ```
+cd <path_to_pyaemaws>
+python -m unittest discover -s tests
+
 coverage run --source=./AocAwsHelper -m unittest discover
 coverage report
 ```

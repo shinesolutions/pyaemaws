@@ -21,6 +21,7 @@ setuptools.setup(
     python_requires='>=3.6',
     install_requires=[
         "boto3==1.9.71",
-        "python-dateutil==2.8.0"
+        "python-dateutil==2.8.0",
+        "coverage==5.0.3"
     ]
 )
