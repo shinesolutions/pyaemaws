@@ -1,6 +1,8 @@
+import os
 import setuptools
 
-with open("/opt/repos/auspost/aem-opencloud-libraries/AocAwsHelper/README.MD", "r") as fh:
+readme_file = os.path.join(os.path.dirname(os.path.realpath(__file__)), "README.MD")
+with open(readme_file, "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
