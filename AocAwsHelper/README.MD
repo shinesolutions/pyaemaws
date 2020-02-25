@@ -1,4 +1,4 @@
-#### AOC (AEM Opencloud ) AWS Helper
+###AOC (AEM Opencloud ) AWS Helper
 AOC AWS Helper helps to query aws resources in-order to work easily with AEM Opencloud Manager. 
 
 Check setup.py for package configuration and dependencies. 
@@ -27,4 +27,41 @@ print(s.fetch_stack_details())
  aoc-sm-npe-18
 ```
 
-More details and usage to be added.
+##Tests
+
+`python -m unittest discover -s <test_folder_name>
+eg: python -m unittest discover -s tests
+`
+
+**Coverage**
+
+`pip install coverage`
+
+```
+set pythonpath to pyaemaws
+export PYHTONPATH=<path_to_pyaemaws>
+eg: export PYTHONPATH=/opt/repos/shine/pyaemaws
+```
+```
+coverage run --source=./AocAwsHelper -m unittest discover
+coverage report
+```
+
+**Result:**
+```
+Example: 
+Name                                                  Stmts   Miss  Cover
+-------------------------------------------------------------------------
+AocAwsHelper/S3Helper/__init__.py                         0      0   100%
+AocAwsHelper/StackPrefixHelper/StackPrefixHelper.py      52     26    50%
+AocAwsHelper/StackPrefixHelper/__init__.py                1      0   100%
+AocAwsHelper/__init__.py                                  0      0   100%
+AocAwsHelper/setup.py                                     4      4     0%
+-------------------------------------------------------------------------
+TOTAL                                                    57     30    47%
+```
+####To generate a html coverage report, run
+
+```
+coverage html
+```
