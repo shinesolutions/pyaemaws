@@ -7,3 +7,4 @@ build/
 .coverage
 htmlcov/
 tests/__pycache__
+*.pyc
