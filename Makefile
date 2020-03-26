@@ -1,4 +1,9 @@
+ci: deps test
+
 deps:
 	pip install -r requirements.txt
 
-.PHONY: deps
+test:
+	python -m unittest discover -s tests
+
+.PHONY: ci deps test
