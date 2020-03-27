@@ -8,9 +8,9 @@ with open(readme_file, "r") as fh:
 setuptools.setup(
     name="AocAwsHelper",
     version="0.0.4",
-    author="ShineSolutions",
-    author_email="author@example.com",
-    description="AWS Helper Python Package",
+    author="Shine Solutions",
+    author_email="opensource@shinesolutions.com",
+    description="AEM on AWS API Python client",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/shinesolutions/pyaemaws",
