@@ -1,4 +1,4 @@
-ci: clean deps test package install
+ci: clean deps test coverage package install
 
 clean:
 	rm -rf *.egg-info build dist pyaemaws/_pycache_/ pyaemaws/*.pyc tests/_pycache_/ tests/*.pyc .coverage
@@ -20,4 +20,7 @@ package:
 install:
 	pip3 install dist/pyaemaws-0.0.4-py3-none-any.whl
 
-.PHONY: ci clean deps test coverage package install
+release:
+	rtk release
+
+.PHONY: ci clean deps test coverage package install release

@@ -1,0 +1,15 @@
+{
+  "resources": [
+    {
+      "path": "conf/info.yaml",
+      "type": "yaml",
+      "params": {
+        "variable": "version"
+      }
+    },
+    {
+      "path": "CHANGELOG.md",
+      "type": "keep-a-changelog"
+    }
+  ]
+}
