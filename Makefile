@@ -21,7 +21,7 @@ package:
 	python3 pyaemaws/setup.py sdist bdist_wheel
 
 install:
-	pip3 install dist/pyaemaws-0.0.4-py3-none-any.whl
+	pip3 install dist/pyaemaws-`yq -r .version conf/info.yaml`-py3-none-any.whl
 
 release:
 	rtk release
