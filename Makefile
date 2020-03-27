@@ -8,13 +8,13 @@ test:
 	python -m unittest discover -s tests
 
 coverage:
-	coverage run --source=./AocAwsHelper -m unittest discover
+	coverage run --source=./pyaemaws -m unittest discover
 	coverage report
 
 package:
-	python3 AocAwsHelper/setup.py sdist bdist_wheel
+	python3 pyaemaws/setup.py sdist bdist_wheel
 
 install:
-	pip3 install dist/AocAwsHelper-0.0.4-py3-none-any.whl
+	pip3 install dist/pyaemaws-0.0.4-py3-none-any.whl
 
 .PHONY: ci deps test coverage package install

@@ -1,6 +1,0 @@
-.DS_Store
-stage/
-.idea/
-dist/
-build/
-*.egg-info

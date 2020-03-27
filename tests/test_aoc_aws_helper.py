@@ -1,5 +1,5 @@
 import unittest
-from AocAwsHelper.StackPrefixHelper.StackPrefixHelper import StackPrefixHelper
+from pyaemaws.StackPrefixHelper.StackPrefixHelper import StackPrefixHelper
 
 
 class TestStackPrefixHelper(unittest.TestCase):
