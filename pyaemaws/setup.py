@@ -1,13 +1,17 @@
 import os
 import setuptools
+import yaml
 
 readme_file = os.path.join(os.path.dirname(os.path.realpath(__file__)), "README.MD")
 with open(readme_file, "r") as fh:
     long_description = fh.read()
+info_file = os.path.join(os.path.dirname(os.path.realpath(__file__)), "../conf/info.yaml")
+with open(info_file, "r") as info_fh:
+    info = yaml.load(info_fh, Loader=yaml.FullLoader)
 
 setuptools.setup(
     name="pyaemaws",
-    version="0.0.4",
+    version=info["version"],
     author="Shine Solutions",
     author_email="opensource@shinesolutions.com",
     description="AEM on AWS API Python client",
