@@ -1,11 +1,14 @@
-ci: clean deps test coverage package install
+ci: clean deps lint test coverage package install
 
 clean:
 	rm -rf *.egg-info build dist pyaemaws/_pycache_/ pyaemaws/*.pyc tests/_pycache_/ tests/*.pyc .coverage
 
 deps:
-	pip install -r requirements.txt
-	pip3 install -r requirements.txt
+	pip install --ignore-installed -r requirements.txt
+	pip3 install --ignore-installed -r requirements.txt
+
+lint:
+	pylint pyaemaws/*.py pyaemaws/*/*.py || echo "allow failure temporarily"
 
 test:
 	python -m unittest discover -s tests
@@ -23,4 +26,4 @@ install:
 release:
 	rtk release
 
-.PHONY: ci clean deps test coverage package install release
+.PHONY: ci clean deps lint test coverage package install release
