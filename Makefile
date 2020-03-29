@@ -16,6 +16,7 @@ test:
 coverage:
 	coverage run --source=./pyaemaws -m unittest discover
 	coverage report
+	coverage html
 
 package:
 	python3 pyaemaws/setup.py sdist bdist_wheel
