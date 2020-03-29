@@ -1,73 +1,31 @@
-###AOC (AEM Opencloud ) AWS Helper
-AOC AWS Helper helps to query aws resources in-order to work easily with AEM Opencloud Manager.
+[![Build Status](https://github.com/shinesolutions/pyaemaws/workflows/CI/badge.svg)](https://github.com/shinesolutions/pyaemaws/actions?query=workflow%3ACI)
+[![Known Vulnerabilities](https://snyk.io/test/github/shinesolutions/pyaemaws/badge.svg)](https://snyk.io/test/github/shinesolutions/pyaemaws)
 
-Check setup.py for package configuration and dependencies.
+pyaemaws
+--------
 
+pyaemaws is a Python client for Shine Solutions [Adobe Experience Manager (AEM)](http://www.adobe.com/au/marketing-cloud/enterprise-content-management.html) Platform on AWS.
 
-**How to Build**
+This library provides an API which enables the interaction with the platform via Python language, allowing a deep integration with a number of Python-based tools such as [Ansible](https://ansible.com/).
 
-```
-pip3 install wheel
-python3 setup.py sdist bdist_wheel
-```
+pyaemaws is part of [AEM OpenCloud](https://aemopencloud.io) platform.
 
-**How to Install**
+Installation
+------------
 
-`pip3 install dist/pyaemaws-<version_from_setup.py>-py3-none-any.whl`
+From [PyPI](https://pypi.org/):
 
-`eg: pip3 install dist/pyaemaws-0.0.2-py3-none-any.whl`
+    pip3 install pyaemaws
 
+From [Python Wheel](https://pythonwheels.com/):
 
-**Usage**
-```from StackPrefixHelper import StackPrefixHelper
+    make deps package install
 
-s = StackPrefixHelper.StackPrefixHelper(stack_type="consolidated")
-print(s.fetch_stack_details())
-aoc-con62-npe-pdev-01 aoc-con62-npe-dev1-19 aoc-con62-npe-dev5-04 aoc-con62-npe-dev3-03 aoc-con62-npe-dev2-18
+Usage
+-----
 
-s = StackPrefixHelper.StackPrefixHelper(stack_type="stack-manager")
-print(s.fetch_stack_details())
- aoc-sm-npe-18
-```
+    from pyaemaws.StackPrefixHelper.StackPrefixHelper import StackPrefixHelper
 
-##Tests
-
-`python -m unittest discover -s <test_folder_name>
-eg: python -m unittest discover -s tests
-`
-
-**Coverage**
-
-`pip install coverage`
-
-```
-set pythonpath to pyaemaws, if module cannot be loaded error occurs
-export PYHTONPATH=<path_to_pyaemaws>
-eg: export PYTHONPATH=/opt/repos/shine/pyaemaws
-```
-```
-cd <path_to_pyaemaws>
-python -m unittest discover -s tests
-
-coverage run --source=./pyaemaws -m unittest discover
-coverage report
-```
-
-**Result:**
-```
-Example:
-Name                                                  Stmts   Miss  Cover
--------------------------------------------------------------------------
-pyaemaws/S3Helper/__init__.py                         0      0   100%
-pyaemaws/StackPrefixHelper/StackPrefixHelper.py      52     26    50%
-pyaemaws/StackPrefixHelper/__init__.py                1      0   100%
-pyaemaws/__init__.py                                  0      0   100%
-pyaemaws/setup.py                                     4      4     0%
--------------------------------------------------------------------------
-TOTAL                                                    57     30    47%
-```
-####To generate a html coverage report, run
-
-```
-coverage html
-```
+    self.sph_fs_text = StackPrefixHelper(stack_type="full-set", return_as="text")
+    self.stack_type = ['full-set', 'stack-manager', 'consolidated']
+    self.return_values = ["text", "list", "json"]
