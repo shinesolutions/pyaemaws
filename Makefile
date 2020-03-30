@@ -19,7 +19,7 @@ coverage:
 	coverage html
 
 package:
-	python3 pyaemaws/setup.py sdist bdist_wheel
+	python3 setup.py sdist bdist_wheel
 
 install:
 	pip3 install dist/pyaemaws-`yq -r .version conf/info.yaml`-py3-none-any.whl
@@ -28,10 +28,10 @@ release:
 	rtk release
 
 publish:
-	python setup.py sdist
+	python3 setup.py sdist
 
 publish-test:
-	python setup.py register -r pypitest && \
-		python setup.py sdist upload -r pypitest
+	python3 setup.py register -r pypitest && \
+		python3 setup.py sdist upload -r pypitest
 
 .PHONY: ci clean deps lint test coverage package install release publish publish-test

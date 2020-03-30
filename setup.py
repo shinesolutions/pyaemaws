@@ -2,11 +2,11 @@ import os
 import setuptools
 import yaml
 
-readme_file = os.path.join(os.path.dirname(os.path.realpath(__file__)), "../README.md")
+readme_file = os.path.join(os.path.dirname(os.path.realpath(__file__)), "README.md")
 with open(readme_file, "r") as readme_fh:
     readme = readme_fh.read()
 
-info_file = os.path.join(os.path.dirname(os.path.realpath(__file__)), "../conf/info.yaml")
+info_file = os.path.join(os.path.dirname(os.path.realpath(__file__)), "conf/info.yaml")
 with open(info_file, "r") as info_fh:
     info = yaml.load(info_fh, Loader=yaml.FullLoader)
 
