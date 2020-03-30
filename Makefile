@@ -27,4 +27,11 @@ install:
 release:
 	rtk release
 
-.PHONY: ci clean deps lint test coverage package install release
+publish:
+	python setup.py sdist
+
+publish-test:
+	python setup.py register -r pypitest && \
+		python setup.py sdist upload -r pypitest
+
+.PHONY: ci clean deps lint test coverage package install release publish publish-test
