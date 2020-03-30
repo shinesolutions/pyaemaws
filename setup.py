@@ -15,6 +15,7 @@ setuptools.setup(
     version=info["version"],
     author="Shine Solutions",
     author_email="opensource@shinesolutions.com",
+    keywords=["Adobe Experience Manager (AEM) API"],
     description="AEM on AWS API Python client",
     long_description=readme,
     long_description_content_type="text/markdown",
