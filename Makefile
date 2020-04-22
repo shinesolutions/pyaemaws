@@ -8,10 +8,10 @@ deps:
 	pip3 install --ignore-installed -r requirements.txt
 
 lint:
-	pylint pyaemaws/*.py pyaemaws/*/*.py || echo "allow failure temporarily"
+	pylint pyaemaws/*.py pyaemaws/*/*.py
 
 test:
-	python -m unittest discover -s tests
+	python3 -m unittest discover -s tests
 
 coverage:
 	coverage run --source=./pyaemaws -m unittest discover
