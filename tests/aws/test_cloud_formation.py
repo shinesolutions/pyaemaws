@@ -18,12 +18,16 @@ class TestCloudFormation(unittest.TestCase):
 
     @patch('boto3.client', MagicMock(return_value=mock_boto3_client))
     def test_get_active_stack_names(self):
-        self.cloud_formation = CloudFormation(region_name='ap-southeast-2')
-        stack_names = self.cloud_formation.get_active_stack_names()
+        cloud_formation = CloudFormation(region_name='ap-southeast-2')
+        stack_names = cloud_formation.get_active_stack_names()
         self.assertTrue(isinstance(stack_names, list))
         self.assertEqual(stack_names[0], 'Stack-Name-1')
         self.assertEqual(stack_names[1], 'Stack-Name-2')
         self.assertEqual(stack_names[2], 'Stack-Name-3')
+
+    def test_str(self):
+        cloud_formation = CloudFormation(region_name='ap-southeast-2')
+        self.assertEqual(str(cloud_formation), 'CloudFormation')
 
 if __name__ == '__main__':
     unittest.main()
