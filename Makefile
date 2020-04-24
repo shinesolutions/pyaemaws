@@ -15,8 +15,10 @@ test:
 
 coverage:
 	coverage run --source=./pyaemaws -m unittest discover
-	coverage report
+	# Generate the HTML report regardless of coverage
 	coverage html
+	# Fail the build if coverage is less than 100%
+	coverage report --fail-under=100
 
 package:
 	python3 setup.py sdist bdist_wheel
