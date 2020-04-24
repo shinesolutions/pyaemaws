@@ -24,8 +24,12 @@ From [Python Wheel](https://pythonwheels.com/):
 Usage
 -----
 
-    from pyaemaws.StackPrefixHelper.StackPrefixHelper import StackPrefixHelper
+To retrieve all stack prefixes of AEM Full-Set stacks:
 
-    self.sph_fs_text = StackPrefixHelper(stack_type="full-set", return_as="text")
-    self.stack_type = ['full-set', 'stack-manager', 'consolidated']
-    self.return_values = ["text", "list", "json"]
+    from pyaemaws.stack_prefix import StackPrefix
+
+    stack_prefix = StackPrefix(region_name='ap-southeast-2')
+    full_set_stack_prefixes = stack_prefix.get_full_set_stack_prefixes()
+
+    for full_set_stack_prefix in full_set_stack_prefixes:
+        print(full_set_stack_prefix)
