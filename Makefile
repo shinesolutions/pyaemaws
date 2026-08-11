@@ -9,6 +9,8 @@ deps:
 
 lint:
 	pylint pyaemaws/*.py pyaemaws/*/*.py
+	actionlint -shellcheck= .github/workflows/*.yaml
+	mdl README.md
 
 test:
 	python3 -m unittest discover -s tests
