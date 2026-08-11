@@ -8,4 +8,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## Unreleased
 
 ### Added
+- Add actionlint (via actionlint-py) and mdl (markdownlint) checks to lint target
 - Initial version
